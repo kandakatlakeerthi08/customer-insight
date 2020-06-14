@@ -13,7 +13,11 @@ export interface IComponent {
 export class LayoutService {
   public options: GridsterConfig = {
     draggable: {
-      enabled: true
+      enabled: true,
+      stop: function(event, $element, widget) {
+        console.log('dragable');
+        this.saveInDatabase($element.el.id, event, 'position');
+      }.bind(this)
     },
     pushItems: true,
     resizable: {
@@ -58,6 +62,12 @@ export class LayoutService {
   getComponentRef(id: string): string {
     const comp = this.components.find(c => c.id === id);
     return comp ? comp.componentRef : null;
+  }
+  saveInDatabase(id, event, position): void{
+    console.log(event);
+    const index  = this.layout.findIndex(item => item.id === event.id)
+    this.layout.splice(index, 1, event);
+    console.log(this.layout);
   }
 }
 
