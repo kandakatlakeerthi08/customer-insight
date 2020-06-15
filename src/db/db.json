@@ -1,0 +1,102 @@
+{
+  "widgets": [
+    {
+      "id": "widget_virtusa1",
+      "cols": 3,
+      "rows": 2,
+      "x": 0,
+      "y": 0,
+      "desc": "widget_virtusa1 Desc1"
+    },
+    {
+      "id": "widget_virtusa2",
+      "cols": 3,
+      "rows": 2,
+      "x": 3,
+      "y": 0,
+      "desc": "widget_virtusa1 Desc2"
+    },
+    {
+      "id": "widget_virtusa3",
+      "cols": 3,
+      "rows": 2,
+      "x": 6,
+      "y": 0,
+      "desc": "widget_virtusa1 Desc3"
+    },
+    {
+      "id": "widget_virtusa4",
+      "cols": 3,
+      "rows": 2,
+      "x": 0,
+      "y": 2,
+      "desc": "widget_virtusa1 Desc4"
+    },
+    {
+      "id": "widget_virtusa5",
+      "cols": 3,
+      "rows": 2,
+      "x": 3,
+      "y": 2,
+      "desc": "widget_virtusa1 Desc5"
+    },
+    {
+      "id": "widget_virtusa6",
+      "cols": 3,
+      "rows": 2,
+      "x": 6,
+      "y": 2,
+      "desc": "widget_virtusa1 Desc6"
+    },
+    [
+      {
+        "id": "widget_virtusa1",
+        "cols": 3,
+        "rows": 2,
+        "x": 0,
+        "y": 0,
+        "desc": "widget_virtusa1 Desc1"
+      },
+      {
+        "id": "widget_virtusa2",
+        "cols": 3,
+        "rows": 2,
+        "x": 3,
+        "y": 0,
+        "desc": "widget_virtusa1 Desc2"
+      },
+      {
+        "id": "widget_virtusa3",
+        "cols": 3,
+        "rows": 2,
+        "x": 6,
+        "y": 0,
+        "desc": "widget_virtusa1 Desc3"
+      },
+      {
+        "id": "widget_virtusa4",
+        "cols": 3,
+        "rows": 2,
+        "x": 1,
+        "y": 2,
+        "desc": "widget_virtusa1 Desc44"
+      },
+      {
+        "id": "widget_virtusa5",
+        "cols": 3,
+        "rows": 2,
+        "x": 4,
+        "y": 2,
+        "desc": "widget_virtusa1 Desc5"
+      },
+      {
+        "id": "widget_virtusa6",
+        "cols": 3,
+        "rows": 2,
+        "x": 7,
+        "y": 2,
+        "desc": "widget_virtusa1 Desc6"
+      }
+    ]
+  ]
+}

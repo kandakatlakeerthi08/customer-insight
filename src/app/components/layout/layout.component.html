@@ -1,28 +1,14 @@
 <div class="toolbar">
-    <button (click)="layoutService.addItem()">Add Item</button>
-    <div
-    class="draggable"
-    draggable="true"
-    (dragend)="layoutService.dropItem('example1')" >
-             Example 1
-     </div>
-  <div
-    class="draggable"
-    draggable="true"
-    (dragend)="layoutService.dropItem('example2')">
-            Example 2
-    </div>
+ User : {{userEmail}}
 </div>
 <gridster [options]="options">
   <gridster-item *ngFor="let item of layout" [item]="item"
   (dragover)="layoutService.setDropId(item.id)">
-  <ng-container
-      appLayoutItem
-      [componentRefInDir]="layoutService.getComponentRef(item.id)"
-    >
-    </ng-container>
+  <app-widget-component [id]="item.id" [description]="item.desc">
+
+  </app-widget-component>
     <button
-    (click)="layoutService.deleteItem(item)">
+    (click)="layoutService.deleteItem(item.id)">
     Delete Item
   </button>
   </gridster-item>

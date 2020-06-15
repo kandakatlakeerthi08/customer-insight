@@ -2,6 +2,10 @@ import { Injectable } from '@angular/core';
 
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { UUID } from 'angular2-uuid';
+import {WidgetsModelModule} from '../../model/widgets-model/widgets-model.module';
+import { UserModelModule } from '../../model/user-model/user-model.module';
+import { RestApiService } from '../rest/rest-api.service';
+import {Observable} from 'rxjs';
 
 export interface IComponent {
   id: string;
@@ -15,10 +19,11 @@ export class LayoutService {
     draggable: {
       enabled: true,
       stop: function(event, $element, widget) {
-        console.log('dragable');
+        console.log('draggable');
         this.saveInDatabase($element.el.id, event, 'position');
       }.bind(this)
     },
+    fixedColWidth: 300,
     pushItems: true,
     resizable: {
       enabled: true
@@ -28,7 +33,7 @@ export class LayoutService {
   public components: IComponent[] = [];
   dropId: string;
 
-  constructor() { }
+  constructor(private restApiService: RestApiService) { }
   addItem(): void {
     this.layout.push({
       cols: 5,
@@ -63,11 +68,12 @@ export class LayoutService {
     const comp = this.components.find(c => c.id === id);
     return comp ? comp.componentRef : null;
   }
-  saveInDatabase(id, event, position): void{
-    console.log(event);
-    const index  = this.layout.findIndex(item => item.id === event.id)
-    this.layout.splice(index, 1, event);
-    console.log(this.layout);
+  updateAllwidgets(widgets: UserModelModule, id: string): void{
+      this.restApiService.update(widgets, id);
+  }
+
+  getAllWidgetFromServer(id: string ): Observable<UserModelModule>{
+    return this.restApiService.getAllById(id);
   }
 }
 
